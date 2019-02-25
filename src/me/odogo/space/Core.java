@@ -86,5 +86,41 @@ public class Core extends JavaPlugin {
 	}
 
 	//The rest of the methods below are now by me.
-
+	
+	public void addAstronaut(Player player) {
+		
+		if(player == null) {
+			NullPointerException e = new NullPointerException("The player cannot be null");
+			e.printStackTrace();
+			return;
+		}
+		
+		astronauts.add(player);
+	}
+	
+	public void removeAstronaut(Player player) {
+		
+		astronauts.remove(player);
+		
+	}
+	
+	public ArrayList<Player> getAstronauts() {
+		return astronauts;
+	}
+	
+	public Player getAstronautByName(String idientifier) {
+		for(Player astronaut : astronauts) {
+			if(astronaut.getName().equals(idienetifier)) {
+				return astronaut;
+			}
+		}
+	}
+	
+	public Player getAstronautByUUID(UUID idientifier) {
+		for(Player astronaut : astronauts) {
+			if(astronaut.getUniqueID() == idientifier) {
+				return astronaut;
+			}
+		}
+	}
 }
