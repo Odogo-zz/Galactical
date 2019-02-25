@@ -40,7 +40,7 @@ public class Furnance implements Listener {
 		World world = block.getWorld();
 		Location bLoc = block.getLocation();
 		
-		if(block.getType() == Material.CRAFTING_TABLE) {
+		if(block.getType() == Material.FURNANCE) {
 			
 			Block bottomOne = new Location(world, bLoc.getX(), bLoc.getY() - 1, bLoc.getZ()).getBlock();
 			Block bottomTwo = new Location(world, bLoc.getX(), bLoc.getY() - 2, bLoc.getZ()).getBlock();
