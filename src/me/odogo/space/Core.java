@@ -89,11 +89,7 @@ public class Core extends JavaPlugin {
 	
 	public void addAstronaut(Player player) {
 		
-		if(player == null) {
-			NullPointerException e = new NullPointerException("The player cannot be null");
-			e.printStackTrace();
-			return;
-		}
+		c
 		
 		astronauts.add(player);
 	}
@@ -122,5 +118,20 @@ public class Core extends JavaPlugin {
 				return astronaut;
 			}
 		}
+	}
+	
+	public HashMap<Player, Boolean> getAstronautRadio() {
+		return astronautRadio;
+	}
+	
+	public void setAstronautRadio(Player player, boolean state) {
+		
+		if(player == null) {
+			NullPointerException e = new NullPointerException("The player cannot be null");
+			e.printStackTrace();
+			return;
+		}
+		
+		astronautRadio.put(player, state);
 	}
 }
