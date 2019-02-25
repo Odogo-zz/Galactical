@@ -24,7 +24,7 @@ public class Furnance implements Listener {
 		Block bottom = new Location(world, bLoc.getX(), bLoc.getY() - 1, bLoc.getZ()).getBlock();
 		Block aboveOne = new Location(world, bLoc.getX(), bLoc.getY() + 1, bLoc.getZ()).getBlock();
 		
-		if(bottom.getType() == Material.DROPPER && aboveOne.getType() == Material.CRAFTING_TABLE) {
+		if(bottom.getType() == Material.DROPPER && aboveOne.getType() == Material.FURNANCE) {
 				
 			Dropper dropper = (Dropper) bottom;
 			ItemStack[] shape = droppper.getInventory().getContains();
