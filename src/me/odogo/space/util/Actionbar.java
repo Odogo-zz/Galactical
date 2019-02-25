@@ -19,12 +19,14 @@ public class Actionbar {
 	public Actionbar(String message) {
 		this.message = message;
 
-		packet = new PacketPlayOutTitle(EnumTitleAction.ACTIONBAR, ChatSerializer.a("{\"text\":\"" + this.message + "\"}"), 0, 0, 0);
+		packet = new PacketPlayOutTitle(EnumTitleAction.ACTIONBAR, ChatSerializer.a("{\"text\":\"" + this.message + "\"}"), 0, 30, 0);
 	}
 
 	public Actionbar(String message, Player player) {
 		this.player = player;
 		this.message = message;
+		
+		packet = new PacketPlayOutTitle(EnumTitleAction.ACTIONBAR, ChatSerializer.a("{\"text\":\"" + this.message + "\"}"), 0, 30, 0);
 	}
 
 	public void sendActionbar(Player player) {
