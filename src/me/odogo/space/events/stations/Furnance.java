@@ -64,7 +64,7 @@ public class Furnance implements Listener {
 
 			if(bottomOne.getType() == Material.ANVIL && bottomTwo.getType() == Material.DROPPER) {
 
-				player.sendMessage(prefix + ChatColor.GREEN + "Successfully created a Forgery Station!");
+				player.sendMessage(prefix + ChatColor.GREEN + "Successfully created a Furnace Station!");
 				player.playSound(bLoc, Sound.BLOCK_ANVIL_USE, 1, 1);
 
 			}
