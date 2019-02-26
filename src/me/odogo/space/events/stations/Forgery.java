@@ -64,7 +64,7 @@ public class Forgery implements Listener {
 
 			if(bottomOne.getType() == Material.ANVIL && bottomTwo.getType() == Material.DROPPER) {
 
-				player.sendMessage(prefix + ChatColor.GREEN + "Successfully created a Crafting Station!");
+				player.sendMessage(prefix + ChatColor.GREEN + "Successfully created a Forgery Station!");
 				player.playSound(bLoc, Sound.BLOCK_ANVIL_USE, 1, 1);
 
 			}
