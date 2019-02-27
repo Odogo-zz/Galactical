@@ -46,7 +46,14 @@ public class Core extends JavaPlugin {
 	}
 
 	private void registerEvents() {
-
+		PluginManager pm = this.getServer().getPluginManager();
+		
+		pm.registerEvents(new Crafting(), this);
+		pm.registerEvents(new Forgery(), this);
+		pm.reigsterEvents(new Furnance(), this);
+		
+		pm.registerEvents(new Galactical(), this);
+		getCommand("galactical").setExecutor(new Galactical());
 	}
 
 	private void registerConfigs() {
