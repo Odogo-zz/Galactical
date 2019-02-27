@@ -20,13 +20,23 @@ public class Galactical implements Listener, CommandExecutor {
 				Player player = (Player) sender;
 				
 				if(args.length <= 0) {
+					
 					player.sendMessage(prefix + ChatColor.GOLD + "Galactical was created by Odogo.");
 					player.sendMessage(ChatColor.GOLD + "© All rights reserved.");
 					player.sendMessage(ChatColor.GREEN + "Use '/galatical help' for the list of commands.");
+				
 				} else if(args.length == 1) {
-					if(args[0].equalsIgnoreCase("help") {
+					
+					if(args[0].equalsIgnoreCase("help")) {
 						player.sendMessage(helpCommands);
+					} else if(args[0].equalsIgnoreCase("gui")) {
+						//TODO Will make a method of setting the view of the GUI, later.
+					} else if(args[0].equalsIgnoreCase("stats")) {
+						//Requires the file-per-player system.
+					} else if(args[0].equalsIgnoreCase("radio")) {
+						//Requires the file-per-player system.
 					}
+					
 				}
 				
 			} else {
