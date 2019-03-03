@@ -1,4 +1,4 @@
-package me.odogo.space.util;
+package me.odogo.galactical.util;
 
 import java.util.ArrayList;
 

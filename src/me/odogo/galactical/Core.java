@@ -1,4 +1,4 @@
-package me.odogo.space;
+package me.odogo.galactical;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,9 +7,14 @@ import java.util.logging.Level;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import me.odogo.galactical.cmds.Galactical;
+import me.odogo.galactical.events.stations.Crafting;
+import me.odogo.galactical.events.stations.Forgery;
+import me.odogo.galactical.events.stations.Furnance;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
@@ -47,11 +52,11 @@ public class Core extends JavaPlugin {
 
 	private void registerEvents() {
 		PluginManager pm = this.getServer().getPluginManager();
-		
+
 		pm.registerEvents(new Crafting(), this);
 		pm.registerEvents(new Forgery(), this);
-		pm.reigsterEvents(new Furnance(), this);
-		
+		pm.registerEvents(new Furnance(), this);
+
 		pm.registerEvents(new Galactical(), this);
 		getCommand("galactical").setExecutor(new Galactical());
 	}

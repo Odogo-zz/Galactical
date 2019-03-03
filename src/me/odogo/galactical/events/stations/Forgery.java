@@ -1,4 +1,4 @@
-package me.odogo.space.events.stations;
+package me.odogo.galactical.events.stations;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -15,7 +15,7 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
-import me.odogo.space.Core;
+import me.odogo.galactical.Core;
 
 public class Forgery implements Listener {
 
