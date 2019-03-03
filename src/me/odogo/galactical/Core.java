@@ -122,21 +122,20 @@ public class Core extends JavaPlugin {
 	}
 
 	public Player getAstronautByName(String idientifier) {
-		for(Player astronaut : astronauts) {
-			if(astronaut.getName().equals(idientifier)) {
-				return astronaut;
-			}
+
+		if(astronauts.contains(this.getServer().getPlayer(idientifier))) {
+			return this.getServer().getPlayer(idientifier);
+		} else {
+			return null;
 		}
-		return null;
 	}
 
 	public Player getAstronautByUUID(UUID idientifier) {
-		for(Player astronaut : astronauts) {
-			if(astronaut.getUniqueId() == idientifier) {
-				return astronaut;
-			}
+		if(astronauts.contains(this.getServer().getPlayer(idientifier))) {
+			return this.getServer().getPlayer(idientifier);
+		} else {
+			return null;
 		}
-		return null;
 	}
 
 	public HashMap<Player, Boolean> getAstronautRadio() {
