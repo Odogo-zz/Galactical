@@ -109,6 +109,28 @@ public class ItemManager {
 		};
 
 		return compEmeraldShape;
+	}
+
+	public ItemStack getOxygenWire() {
+		ItemStack wire = new ItemStack(Material.END_ROD);
+		ItemMeta wireM = wire.getItemMeta();
+
+		wireM.setDisplayName(ChatColor.AQUA + "Oxygen Wire");
+		wireM.setLore(Arrays.asList(ChatColor.GRAY + "Transfers Oxygen to one place to another.", ChatColor.GOLD + "Galactical Material", ChatColor.AQUA + "Oxygen Set Material"));
+
+		wire.setItemMeta(wireM);
+		return wire;
+	}
+
+	public ItemStack[] getOxygenWireShape() {
+
+		ItemStack[] wireShape = {
+				new ItemStack(Material.WOOL, 1, (short) 15), new ItemStack(Material.WOOL, 1, (short) 15), new ItemStack(Material.WOOL, 1, (short) 15),
+				new ItemStack(Material.WOOL, 1, (short) 15), null, new ItemStack(Material.WOOL, 1, (short) 15),
+				new ItemStack(Material.WOOL, 1, (short) 15), new ItemStack(Material.WOOL, 1, (short) 15), new ItemStack(Material.WOOL, 1, (short) 15),
+		};
+
+		return wireShape;
 
 	}
 }

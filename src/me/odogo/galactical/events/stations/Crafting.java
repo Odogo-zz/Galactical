@@ -1,5 +1,7 @@
 package me.odogo.galactical.events.stations;
 
+import java.util.Arrays;
+
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -13,14 +15,17 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import me.odogo.galactical.Core;
+import me.odogo.galactical.util.ItemManager;
 
 public class Crafting implements Listener {
 
 	private Core plugin = Core.getPlugin(Core.class);
 	private final String prefix = plugin.prefix;
+	private ItemManager im = new ItemManager();
 
 	@EventHandler
 	public void onStationCraft(PlayerInteractEvent e) {
@@ -43,8 +48,29 @@ public class Crafting implements Listener {
 
 		if(bottom.getType() == Material.DROPPER && aboveOne.getType() == Material.WORKBENCH) {
 
-			Dropper dropper = (Dropper) bottom;
+			e.setCancelled(true);
+
+			Dropper dropper = (Dropper) bottom.getState();
+			Inventory inv = dropper.getInventory();
 			ItemStack[] shape = dropper.getInventory().getContents();
+
+			if(Arrays.equals(shape, im.getEmpty())) {
+				player.sendMessage(prefix + ChatColor.RED + "Your crafting was unsuccessful. The shape is empty.");
+				player.playSound(bLoc, Sound.ENTITY_ELDER_GUARDIAN_CURSE, 1, 1);
+				return;
+			}
+
+			if(Arrays.equals(shape, im.getOxygenWireShape())) {
+
+				inv.clear();
+
+				inv.setItem(4, im.getOxygenWire());
+
+				player.sendMessage(prefix + ChatColor.GREEN + "Your crafting was successful. You made " + im.getOxygenWire().getItemMeta().getDisplayName());				
+				player.playSound(bLoc, Sound.BLOCK_ANVIL_USE, 1, 1);
+
+			}
+
 
 		}
 	}
