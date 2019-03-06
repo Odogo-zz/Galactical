@@ -2,3 +2,8 @@ main: me.odogo.galactical.Core
 name: Galactical
 version: 0.1.0
 author: Odogo
+
+commands:
+   galactical:
+      usage: /<command>
+      description: The main command.

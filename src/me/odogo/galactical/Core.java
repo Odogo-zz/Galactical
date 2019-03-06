@@ -64,6 +64,7 @@ public class Core extends JavaPlugin {
 	private void registerConfigs() {
 
 		getConfig().addDefault("use-vault-intergration", true);
+		getConfig().addDefault("gameplay-settings.quick-mode", false);
 		getConfig().options().copyDefaults(true);
 		saveConfig();
 
