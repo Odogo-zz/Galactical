@@ -133,4 +133,31 @@ public class ItemManager {
 		return wireShape;
 
 	}
+	
+	public ItemStack getOxygenMask() {
+		
+		ItemStack mask = new ItemStack(Material.STAINED_GLASS, 1, (short) 0);
+		ItemMeta maskM = mask.getItemMeta();
+		
+		maskM.setDisplayName(ChatColor.AQUA + "Oxygen Mask");
+		maskM.setLore(Arrays.asList(ChatColor.GRAY + "Contains oxygen inside of the suit.", ChatColor.GOLD + "Galactical Item", ChatColor.AQUA + "Galactical Suit"));
+		
+		mask.setItemMeta(maskM);
+		return mask;
+		
+	}
+	
+	public ItemStack[] getOxygenMaskShape() {
+		
+		ItemStack[] maskShape = {
+			
+			new ItemStack(Material.GLASS_PANE), new ItemStack(Material.GLASS_PANE), new ItemStack(Material.GLASS_PANE),
+			new ItemStack(Material.GLASS_PANE), new ItemStack(Material.IRON_HELMET), new ItemStack(Material.GLASS_PANE),
+			new ItemStack(Material.GLASS_PANE), this.getOxygenWire(), new ItemStack(Material.GLASS_PANE),
+			
+		};
+		
+		return maskShape;
+		
+	}
 }
