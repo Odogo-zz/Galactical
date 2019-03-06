@@ -12,6 +12,7 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.odogo.galactical.cmds.Galactical;
+import me.odogo.galactical.events.ItemManagerEvents;
 import me.odogo.galactical.events.stations.Crafting;
 import me.odogo.galactical.events.stations.Forgery;
 import me.odogo.galactical.events.stations.Furnance;
@@ -56,6 +57,8 @@ public class Core extends JavaPlugin {
 		pm.registerEvents(new Crafting(), this);
 		pm.registerEvents(new Forgery(), this);
 		pm.registerEvents(new Furnance(), this);
+
+		pm.registerEvents(new ItemManagerEvents(), this);
 
 		pm.registerEvents(new Galactical(), this);
 		getCommand("galactical").setExecutor(new Galactical());

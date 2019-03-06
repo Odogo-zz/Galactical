@@ -69,6 +69,14 @@ public class Crafting implements Listener {
 				player.sendMessage(prefix + ChatColor.GREEN + "Your crafting was successful. You made " + im.getOxygenWire().getItemMeta().getDisplayName());				
 				player.playSound(bLoc, Sound.BLOCK_ANVIL_USE, 1, 1);
 
+			} else if(Arrays.equals(shape, im.getOxygenMaskShape())) {
+
+				inv.clear();
+				inv.setItem(4, im.getOxygenMask());
+
+				player.sendMessage(prefix + ChatColor.GREEN + "Your crafting was successful. You made " + im.getOxygenMask().getItemMeta().getDisplayName());				
+				player.playSound(bLoc, Sound.BLOCK_ANVIL_USE, 1, 1);
+
 			}
 
 
